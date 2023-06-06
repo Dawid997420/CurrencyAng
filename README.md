@@ -1,4 +1,4 @@
-## !!! To run this project you need to run my authentication server first - keycloak server !!! 
+##   !!! To run this project you need to run my authentication server first - keycloak server !!! 
 
 # CurrencyAng
 
