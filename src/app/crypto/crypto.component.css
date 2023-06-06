@@ -1,0 +1,45 @@
+#container {
+    margin-top: 0.3rem;
+    width: 100%;
+    min-height: 75rem;
+    height: auto;
+    border-radius: 0.2rem;
+    background-color: rgb(244, 212, 171);
+}
+
+
+.currency { 
+
+    margin-top: 1rem;
+    width: 100%;
+    background-color: rgb(236, 185, 119);
+    margin-top: 0.4rem;    
+    min-height:10rem;   
+    height: auto;
+}
+
+.value{
+    display: inline-block;
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.opis {
+    text-align: center;
+    margin: 1rem;
+    float: left;
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+}
+
+.icon {
+    
+    float: left;
+    max-width: 100px;
+}
+
+.symbol{
+    margin-top: 1.0rem;
+    margin-left: 0.7rem; float: left; 
+    color: rgb(122, 121, 121);
+}

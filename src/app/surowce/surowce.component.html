@@ -1,0 +1,135 @@
+<div id="container">
+
+    <div id="container">
+        <div id="content">
+          <table style="border-spacing: 0 0.2rem;">
+            <thead>
+              <tr>
+                <th>
+                  <div class="waluta">
+                    SUROWIEC
+                  </div>
+                  
+
+                  <div class="arrows" >
+                 
+                    <div>
+                      <i class="arrow fa fa-arrow-up" aria-hidden="true" ></i>
+                    </div>
+
+                    <div >
+                      <i class="arrow fa fa-arrow-down" aria-hidden="true"></i>
+                    </div>
+
+                    <div style="display: inline-block;"></div>
+
+                   </div> 
+
+                </th>
+                <th></th>
+                <th >
+                  <div class="thText">
+                    JEDNOSTKA
+                  </div>
+                </th>
+
+                <th >
+                  
+                  <div id="kurs">KURS </div>
+                  <div class="arrows" >
+                 
+                      <div>
+                        <i class="arrow fa fa-arrow-up" aria-hidden="true" ></i>
+                      </div>
+
+                      <div >
+                        <i class="arrow fa fa-arrow-down" aria-hidden="true"></i>
+                      </div>
+
+                      <div style="display: inline-block;"></div>
+
+                  </div> 
+                
+                </th>
+
+                <th >
+                  <div class="thText">
+                    AKTUALIZACJA
+                  </div>
+                </th>
+                  
+                <th>
+                  
+                  <div class="zmiana">ZMIANA</div>
+
+                  <div class="arrows" >
+                 
+                    <div>
+                      <i class="arrow fa fa-arrow-up" aria-hidden="true" ></i>
+                    </div>
+
+                    <div >
+                      <i class="arrow fa fa-arrow-down" aria-hidden="true"></i>
+                    </div>
+
+                    <div style="display: inline-block;"></div>
+
+                </div> 
+
+                </th>
+
+                <th>
+                  
+                  <div id="zmianaProc" >
+                    ZMIANA<br> PROC.
+                  </div>
+                
+                  <div class="arrows">
+                 
+                    <div>
+                      <i class="arrow fa fa-arrow-up" aria-hidden="true" ></i>
+                    </div>
+
+                    <div >
+                      <i class="arrow fa fa-arrow-down" aria-hidden="true"></i>
+                    </div>
+
+                    <div style="display: inline-block;"></div>
+
+                </div> 
+                
+                </th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor="let material of materials" class="material" (click)="selectMaterial(material)"   >
+                <img class="icon" [src]="'assets/surowce-min/'+material.id +'.png'">
+                <td class="materialTxt" >{{material.name}}</td>
+                <td class="materialTxt" >{{material.unit}}</td>
+
+                <td class="materialTxt" >{{material.price}}</td>
+                <td class="materialTxt" >{{material.data}}</td>
+        
+
+                <td class="materialTxt" >
+                  <div *ngIf="material.change > 0" style="display: inline-block;">+{{material.change}}</div>
+               
+                  <div *ngIf="material.change == 0" style="display: inline-block;">{{"0.0000"}}</div>
+
+                  <div *ngIf="material.change < 0" style="display: inline-block;">{{material.change}} </div>
+                </td>
+                <td class="materialTxt" >
+                  <div *ngIf="material.percentChange > 0" style="display: inline-block;">+{{material.percentChange }}%</div>
+
+                  <div *ngIf="material.percentChange == 0" style="display: inline-block;">{{"0.00"}}% </div>
+                 
+                  <div *ngIf="material.percentChange < 0" style="display: inline-block;">{{material.percentChange }}% </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+</div>

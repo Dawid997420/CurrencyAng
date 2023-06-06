@@ -1,0 +1,153 @@
+
+<div id="container">
+
+
+
+    <div id="container">
+        <div id="content">
+          <table style="border-spacing: 0 0.2rem;">
+            <thead>
+              <tr >
+
+                <th >
+                  <div class="waluta">
+                    WALUTA
+                  </div>
+
+                  <div class="arrows" >
+                 
+                    <div>
+                      <i [class.chosen]="isArrowChosen('waluta',true)" class="arrow fa fa-arrow-up"
+                       aria-hidden="true" (click)="sort('waluta',true)"  ></i>
+                    </div>
+
+                    <div >
+                      <i [class.chosen]="isArrowChosen('waluta',false)" class="arrow fa fa-arrow-down" 
+                      aria-hidden="true" (click)="sort('waluta',false)" ></i>
+                    </div>
+
+                    <div style="display: inline-block;"></div>
+
+                </div> 
+                  
+                </th>
+
+                <th></th>
+                <TH></TH>
+                <th >
+                  
+                  <div id="kurs">KURS </div>
+                  <div class="arrows" >
+                 
+                      <div>
+                        <i [class.chosen]="isArrowChosen('kurs',true)" class="arrow fa fa-arrow-up"
+                         aria-hidden="true" (click)="sort('kurs',true)" ></i>
+                      </div>
+
+                      <div >
+                        <i [class.chosen]="isArrowChosen('kurs',false)" class="arrow fa fa-arrow-down" 
+                        aria-hidden="true"  (click)="sort('kurs',false)"></i>
+                      </div>
+
+                      <div style="display: inline-block;"></div>
+
+                  </div> 
+                
+                </th>
+
+                <th >
+                  <div class="thText">
+                    AKTUALIZACJA
+                  </div>
+                </th>
+
+                <th>
+                  
+                  <div class="zmiana">ZMIANA</div>
+
+                  <div class="arrows" >
+                 
+                    <div>
+                      <i [class.chosen]="isArrowChosen('zmiana',true)" class="arrow fa fa-arrow-up"
+                       aria-hidden="true"  (click)="sort('zmiana',true)"></i>
+                    </div>
+
+                    <div >
+                      <i [class.chosen]="isArrowChosen('zmiana',false)" class="arrow fa fa-arrow-down"
+                       aria-hidden="true" (click)="sort('zmiana',false)" ></i>
+                    </div>
+
+                    <div style="display: inline-block;"></div>
+
+                </div> 
+
+                </th>
+               
+                <th>
+                  
+                  <div id="zmianaProc" >
+                    ZMIANA<br> PROC.
+                  </div>
+                
+                  <div class="arrows">
+                 
+                    <div>
+                      <i  [class.chosen]="isArrowChosen('zmianaProc',true)" class="arrow fa fa-arrow-up" 
+                      aria-hidden="true"  (click)="sort('zmianaProc',true)"  ></i>
+                    </div>
+
+                    <div >
+                      <i  [class.chosen]="isArrowChosen('zmianaProc',false)" class="arrow fa fa-arrow-down"
+                       aria-hidden="true"  (click)="sort('zmianaProc',false)"></i>
+                    </div>
+
+                    <div style="display: inline-block;"></div>
+
+                </div> 
+                
+                </th>
+
+              </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor="let currency of currencies" class="currency" (click)="selectCurrency(currency)"   >
+                <td>
+              
+                    <img class="icon" [src]="'assets/flagi/'+currency.code +'.png'">
+                </td>
+                <td class="currencyTxtCountry" >{{currency.country}}
+                  <div class="grey">{{currency.code}}</div>
+                 </td>
+                <td></td>
+                <td class="currencyTxt" >{{currency.midPrice}}</td>
+                <td class="currencyTxt" >{{currency.effectiveDate}}</td>
+                <td class="currencyTxt" >
+                  <div *ngIf="currency.change > 0" style="display: inline-block;">+{{currency.change}}</div>
+               
+                  <div *ngIf="currency.change == 0" style="display: inline-block;">{{"0.0000"}}</div>
+
+                  <div *ngIf="currency.change < 0" style="display: inline-block;">{{currency.change}}</div>
+                </td>
+                <td class="currencyTxt" >
+                  <div *ngIf="currency.change > 0" style="display: inline-block;">+{{currency.percentChange }}%</div>
+
+                  <div *ngIf="currency.change == 0" style="display: inline-block;">{{"0.00"}}%</div>
+                 
+                  <div *ngIf="currency.change < 0" style="display: inline-block;">{{currency.percentChange }}%</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+        <app-strony (onSelect)="getCurrenciesByPage($event)" [pageSize]="50" [size]="149"></app-strony>
+      </div>
+
+
+
+   
+
+
+
+</div>

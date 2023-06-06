@@ -1,0 +1,26 @@
+.strona {
+    background-color: rgb(255, 255, 255);
+    color: rgb(98, 98, 98);
+    font-size: 20px;
+    padding: 0.7rem;
+    border-radius: 0.3rem;
+    border: 1px rgb(107, 107, 107) solid;
+
+}
+
+
+.strona:hover {
+    border: 1px royalblue solid;
+   background-color: royalblue;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 0.7rem;
+}
+
+.selected { 
+    border: 1px royalblue solid;
+    background-color: royalblue;
+     color: rgb(255, 255, 255);
+     font-size: 20px;
+     padding: 0.7rem;
+}

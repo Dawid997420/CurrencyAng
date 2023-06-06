@@ -1,0 +1,70 @@
+#container {
+    margin-top: 0.3rem;
+    width: 100%;
+    min-height: 75rem;
+    height: auto;
+    border-radius: 0.2rem;
+    background-color: rgb(244, 212, 171);
+}
+
+
+.currency { 
+
+    margin-top: 1rem;
+    width: 100%;
+    background-color: rgb(236, 185, 119);
+    margin-top: 0.4rem;    
+    min-height:10rem;   
+    height: auto;
+}
+
+.value{
+    display: inline-block;
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.opis {
+    text-align: center;
+    float: left;
+    margin: 1rem;
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+}
+
+.proc {
+    text-align: center;
+    float: left;
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+    margin: 1rem;
+    margin-left: -1.5rem;
+}
+
+.icon {
+   float: left;
+    position: relative; width: 98px; height: 98px; overflow: hidden; border-radius: 50%;
+    margin-left: -0.4rem;
+    padding: 0.4rem;
+}
+
+
+
+.symbol{
+    font-size: 35px;
+    margin-top: 2.3rem;
+    float: left; 
+    color: rgb(122, 121, 121);
+}
+
+.data {
+
+    text-align: center;
+    float: left;
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+   
+    margin: 0.4rem;
+    margin-top: 1rem;
+    margin-left: -2.5rem;
+}

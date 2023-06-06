@@ -1,0 +1,54 @@
+#container {
+    margin-top: 0.3rem;
+    width: 100%;
+    min-height: 40rem;
+    border-radius: 0.2rem;
+    background-color: rgb(244, 212, 171);
+}
+
+
+#content {
+
+    padding: 1rem;
+
+
+}
+
+.material { 
+
+    width: 100%;
+    background-color: rgb(236, 185, 119);
+    margin-top: 0.4rem;    
+    height: 4rem;
+}
+.material:hover { 
+
+    width: 100%;
+    background-color: rgb(168, 132, 85);
+    cursor:default;
+    height: 4rem;
+
+}
+
+
+
+
+.value {
+    margin-left: 2.7rem;
+    margin-right: 2.7rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    display: inline-block;
+}
+.materialTxt {
+    padding: 2rem;
+    text-align: center;
+     padding: 0;margin: 0;
+    margin-top: 2rem;
+    min-width: 6.5rem;
+}
+
+.icon{
+    padding: 0.7rem;
+    max-width: 80px;
+}

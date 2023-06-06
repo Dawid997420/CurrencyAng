@@ -1,0 +1,66 @@
+<div id="container">
+    
+
+    <div class="currency">
+
+        <div class="value">
+            <img class="icon" [src]="'assets/flagi/'+currency.code +'.png'">
+
+            <div class="opis" style="float: left; margin-top: 2.4rem;margin-left: 0.5rem; ">    {{currency.country}} </div> 
+            <div class="symbol" > {{currency.code}} </div> 
+
+        </div>
+
+      
+ 
+
+        <div class="value">
+           
+            <div class="opis"> Kurs <br> 
+                {{currency.midPrice}}</div>  
+        
+
+        </div>  
+      
+
+
+        <div class="value">
+
+            <div class="opis"> Różnica   <br> 
+                 
+            <div *ngIf="currency.change>0">+{{currency.change}}</div>
+            <div *ngIf="currency.change<=0">{{currency.change}}</div>
+
+            </div> 
+
+        </div>
+
+
+        
+        <div class="value">
+
+            <div class="proc"> Proc.  <br>  
+                 
+            <div *ngIf="currency.percentChange>0">+{{currency.percentChange}}%</div>
+            <div *ngIf="currency.percentChange<=0">{{currency.percentChange}}%</div>
+
+            </div> 
+
+        </div>
+
+     
+
+        <div class="value" style="float:right">
+
+            <div class="data" >     Ostatnia Aktualizacja <br>
+           {{currency.effectiveDate}}
+        </div> 
+        
+        </div>
+
+    </div>
+
+    <app-chart [type]="assetType" [currency]="currency"></app-chart>
+
+    
+</div>

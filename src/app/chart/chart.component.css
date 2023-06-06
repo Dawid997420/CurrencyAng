@@ -1,0 +1,21 @@
+.option {
+
+    display: inline-block;
+    margin-left: 1rem;
+    margin-right:1rem ;
+    background-color: rgb(149, 203, 214);
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    cursor: default;
+}
+
+.option:hover {
+
+    display: inline-block;
+    margin-left: 1rem;
+    margin-right:1rem ;
+    background-color: rgb(88, 148, 158);
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    cursor: default;
+}

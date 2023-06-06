@@ -1,0 +1,58 @@
+<div id="container">
+    
+
+    <div class="currency">
+
+      
+        
+        <div class="value">
+
+            <img class ="icon" [src]="'assets/kryptowaluty/'+crypto.id +'.png'">
+                
+            <div class="opis"> 
+                
+                <div style=" float: left; margin-top: 1.0rem; "  > {{crypto.name }}</div> 
+
+                <div class="symbol"  >  
+                    {{ crypto.id | uppercase }}</div> 
+
+                </div> 
+          
+                
+ 
+         </div>
+ 
+
+        <div class="value">
+           
+            <div class="opis"> Kurs <br> 
+                {{crypto.price}}</div>  
+          
+
+        </div>  
+      
+        
+        <div class="value">
+
+            <div class="opis"> Różnica   <br> 
+                  
+            <div *ngIf="crypto.percentChange>0">+{{crypto.percentChange}}%</div>
+            <div *ngIf="crypto.percentChange<=0">{{crypto.percentChange}}%</div>
+        </div> 
+        </div>
+
+      
+
+        <div class="value" style="float:right">
+
+            <div class="opis" >     Ostatnia Aktualizacja <br> 
+                {{crypto.date  | date: 'yyyy-MM-dd'}}</div> 
+        
+        </div>
+
+    </div>
+
+    <app-chart [type]="assetType" [crypto]="crypto"></app-chart>
+
+    
+</div>

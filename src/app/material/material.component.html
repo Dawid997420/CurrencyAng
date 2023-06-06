@@ -1,0 +1,62 @@
+<div id="container">
+    
+
+    <div class="currency">
+
+        <div class="value">
+            <img class="icon" [src]="'assets/surowce/'+material.id +'.png'" >
+            <div style="float: left; margin-left: 1rem; margin-top: 1.2rem;" > {{material.name}} </div>
+
+        </div>
+
+        <div class="value"  >
+           
+            <div class="opis" > Kurs <br> 
+                {{material.price}}            
+            </div>  
+
+        </div>
+        
+        <div class="value" >
+
+           <div class="opis"> Jednostka <br> 
+            {{material.unit}} 
+        </div> 
+
+        </div>
+
+        
+        <div class="value">
+
+            <div class="opis"> Różnica   <br>
+            <div *ngIf="material.change>0">+{{material.change}} </div>
+            <div *ngIf="material.change<=0">{{material.change}} </div>
+            
+           </div> 
+
+        </div>
+
+        <div class="value">
+
+            <div class="opis"> Proc.
+                <div *ngIf="material.percentChange>0">+{{material.percentChange}}%</div>
+                <div *ngIf="material.percentChange<=0">{{material.percentChange}}%</div>    
+            </div>
+           
+        </div>
+
+        <div class="value" style="float:right">
+
+            <div class="opis" > Ostatnia Aktualizacja <br> 
+           {{material.data}}
+            
+            </div> 
+
+        </div>
+
+    </div>
+
+    <app-chart [type]="assetType" [material]="material"></app-chart>
+
+    
+</div>

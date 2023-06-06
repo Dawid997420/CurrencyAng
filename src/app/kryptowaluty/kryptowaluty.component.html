@@ -1,0 +1,142 @@
+<div id="container">
+
+    <div id="container">
+        <div id="content">
+          <table style="border-spacing: 0 0.2rem;">
+            <thead>
+              <tr>
+                <th >
+                  <div class="waluta">
+                    WALUTA
+                  </div>
+
+                  <div class="arrows" >
+                 
+                    <div>
+                      <i [class.chosen]="isArrowChosen('waluta',true)" class="arrow fa fa-arrow-up"
+                       aria-hidden="true"  (click)="sort('waluta',true)" ></i>
+                    </div>
+
+                    <div >
+                      <i [class.chosen]="isArrowChosen('waluta',false)" class="arrow fa fa-arrow-down"
+                       aria-hidden="true" (click)="sort('waluta',false)"></i>
+                    </div>
+
+                    <div style="display: inline-block;"></div>
+
+                   </div> 
+                  
+                </th>
+                <th></th>
+            
+                <th >
+                  
+                  <div id="kurs">KURS </div>
+                  <div class="arrows" >
+                 
+                      <div>
+                        <i [class.chosen]="isArrowChosen('kurs',true)" class="arrow fa fa-arrow-up" aria-hidden="true"
+                        (click)="sort('kurs',true)" ></i>
+                      </div>
+
+                      <div >
+                        <i [class.chosen]="isArrowChosen('kurs',false)" class="arrow fa fa-arrow-down"
+                        (click)="sort('kurs',false)" aria-hidden="true"></i>
+                      </div>
+
+                      <div style="display: inline-block;"></div>
+
+                  </div> 
+                
+                </th>
+                <th>
+
+                   <div  class="thText" >
+                    DATA
+                   </div>
+
+                </th>
+   
+                <th>
+                  
+                  <div id="zmianaProc" >
+                    ZMIANA<br> PROC.
+                  </div>
+                
+                  <div class="arrows">
+                 
+                    <div>
+                      <i [class.chosen]="isArrowChosen('zmianaProc',true)" class="arrow fa fa-arrow-up" aria-hidden="true"
+                       (click)="sort('zmianaProc',true)"> </i>
+                    </div>
+
+                    <div >
+                      <i  [class.chosen]="isArrowChosen('zmianaProc',false)" class="arrow fa fa-arrow-down"
+                       aria-hidden="true"  (click)="sort('zmianaProc',false)"></i>
+                    </div>
+
+                    <div style="display: inline-block;"></div>
+
+                </div> 
+                
+                </th>
+                <th>
+                  <div id="kapitalizacja">
+                    KAPITALIZACJA <br>RYNKOWA
+                  </div>
+                
+                  <div class="arrows" >
+                 
+                    <div>
+                      <i [class.chosen]="isArrowChosen('kapitalizacjaRynkowa',true)" class="arrow fa fa-arrow-up"
+                       aria-hidden="true"  (click)="sort('kapitalizacjaRynkowa',true)"></i>
+                    </div>
+
+                    <div >
+                      <i [class.chosen]="isArrowChosen('kapitalizacjaRynkowa',false)" class="arrow fa fa-arrow-down" 
+                      aria-hidden="true" (click)="sort('kapitalizacjaRynkowa',false)"></i>
+                    </div>
+
+                    <div style="display: inline-block;"></div>
+
+                </div> 
+              
+                
+                
+                </th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor="let crypto of cryptos" class="material" (click)="selectCrypto(crypto)"   >
+                <img class="icon" [src]="'assets/kryptowaluty/'+crypto.id +'.png'">
+                <td class="name" >{{crypto.name}}
+                  <div class="symbol"> {{crypto.id | uppercase}} </div>
+                </td>
+               
+
+                <td class="materialTxt" >{{crypto.price}}</td>
+                <td class="materialTxt" >{{crypto.date | date: 'yyyy-MM-dd'}}</td>
+
+
+          
+                <td class="materialTxt" >
+                  <div *ngIf="crypto.percentChange > 0" style="display: inline-block;">+{{crypto.percentChange }}%</div>
+
+                  <div *ngIf="crypto.percentChange == 0" style="display: inline-block;">{{"0.00"}}% </div>
+                 
+                  <div *ngIf="crypto.percentChange < 0" style="display: inline-block;">{{crypto.percentChange }}% </div>
+                </td>
+
+                <td class="materialTxt"> {{ crypto.marketCap}}</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+   <app-strony (onSelect)="getCryptosByPage($event)" [pageSize]="50" [size]="353"></app-strony>
+   
+      
+</div>

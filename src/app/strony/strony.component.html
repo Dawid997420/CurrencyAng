@@ -1,0 +1,12 @@
+<div style="text-align:center; margin-top:-1rem; ">
+
+    <div *ngFor="let strona of strony" style="display:inline-block; margin: 0.7rem;">
+      
+       <div  style="cursor: pointer;" class="strona" (click)="select(strona)"  [class.selected]="selected==strona" >
+        {{strona}}
+       </div>
+    
+    </div>  
+
+  </div>
+  

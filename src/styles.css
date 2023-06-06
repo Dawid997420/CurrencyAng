@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+.arrows{
+    margin-top: 0.4rem;
+    float: right;
+    max-height: 3rem;
+    
+}
+
+.arrow {
+   color: black;
+   transition: transform 0.3s; 
+    font-size: 1.5rem;
+   
+}
+
+
+.arrow:hover {
+   color: rgb(142, 142, 142);
+   border: 1rem;
+    
+    transform: scale(1.2); 
+}
+
+#zmianaProc{
+    margin-top: 0.8rem;
+    float: left;
+    margin-left: 1.55rem;
+}
+
+#kapitalizacja{
+    float: left;
+    margin-top: 0.8rem;
+    margin-left: 1.6rem;
+}
+
+#kurs{
+    margin-top: 1.45rem;
+ margin-left: 1.8rem;
+ float: left;
+ }
+ 
+
+.thText {
+   
+    margin-top: 0.55rem;
+}
+
+
+.waluta {
+    float: left;
+    margin-top: 1.35rem;
+    margin-left: 1.45rem;
+}
+
+.zmiana{
+    float: left;
+    margin-top: 1.40rem;
+    margin-left: 1.3rem;
+}
+
+.chosen {
+    color: rgb(142, 142, 142);
+    border: 1rem;
+     cursor: pointer;
+     transform: scale(1.2); 
+
+}
