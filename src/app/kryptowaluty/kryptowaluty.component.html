@@ -2,10 +2,10 @@
 
     <div id="container">
         <div id="content">
-          <table style="border-spacing: 0 0.2rem;">
+          <table >
             <thead>
               <tr>
-                <th >
+                <th  style="width: 8rem;"  >
                   <div class="waluta">
                     WALUTA
                   </div>
@@ -27,9 +27,9 @@
                    </div> 
                   
                 </th>
-                <th></th>
+                <th style="width: 17rem;" ></th>
             
-                <th >
+                <th  style="width: 7rem;" >
                   
                   <div id="kurs">KURS </div>
                   <div class="arrows" >
@@ -49,7 +49,7 @@
                   </div> 
                 
                 </th>
-                <th>
+                <th style="width: 7rem;" >
 
                    <div  class="thText" >
                     DATA
@@ -57,7 +57,7 @@
 
                 </th>
    
-                <th>
+                <th style="width: 8rem;" >
                   
                   <div id="zmianaProc" >
                     ZMIANA<br> PROC.
@@ -80,7 +80,7 @@
                 </div> 
                 
                 </th>
-                <th>
+                <th style="width: 11.5rem;" >
                   <div id="kapitalizacja">
                     KAPITALIZACJA <br>RYNKOWA
                   </div>
@@ -107,7 +107,7 @@
               </tr>
             </thead>
             <tbody >
-              <tr *ngFor="let crypto of cryptos" class="material" (click)="selectCrypto(crypto)"   >
+              <tr *ngFor="let crypto of cryptos"  class="material" (click)="selectCrypto(crypto)">
                 <img class="icon" [src]="'assets/kryptowaluty/'+crypto.id +'.png'">
                 <td class="name" >{{crypto.name}}
                   <div class="symbol"> {{crypto.id | uppercase}} </div>

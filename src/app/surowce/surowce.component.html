@@ -14,11 +14,13 @@
                   <div class="arrows" >
                  
                     <div>
-                      <i class="arrow fa fa-arrow-up" aria-hidden="true" ></i>
+                      <i [class.chosen]="isArrowChosen('surowiec',true)" class="arrow fa fa-arrow-up"
+                       aria-hidden="true"  (click)="sort('surowiec',true)"  ></i>
                     </div>
 
                     <div >
-                      <i class="arrow fa fa-arrow-down" aria-hidden="true"></i>
+                      <i [class.chosen]="isArrowChosen('surowiec',false)"  class="arrow fa fa-arrow-down" 
+                      aria-hidden="true" (click)="sort('surowiec',false)"></i>
                     </div>
 
                     <div style="display: inline-block;"></div>
@@ -39,11 +41,13 @@
                   <div class="arrows" >
                  
                       <div>
-                        <i class="arrow fa fa-arrow-up" aria-hidden="true" ></i>
+                        <i [class.chosen]="isArrowChosen('kurs',true)" class="arrow fa fa-arrow-up" 
+                        aria-hidden="true" (click)="sort('kurs',true)"  ></i>
                       </div>
 
                       <div >
-                        <i class="arrow fa fa-arrow-down" aria-hidden="true"></i>
+                        <i [class.chosen]="isArrowChosen('kurs',false)" class="arrow fa fa-arrow-down"
+                         aria-hidden="true" (click)="sort('kurs',false)"></i>
                       </div>
 
                       <div style="display: inline-block;"></div>
@@ -54,7 +58,7 @@
 
                 <th >
                   <div class="thText">
-                    AKTUALIZACJA
+                    DATA
                   </div>
                 </th>
                   
@@ -65,11 +69,13 @@
                   <div class="arrows" >
                  
                     <div>
-                      <i class="arrow fa fa-arrow-up" aria-hidden="true" ></i>
+                      <i [class.chosen]="isArrowChosen('zmiana',true)" class="arrow fa fa-arrow-up" 
+                      aria-hidden="true" (click)="sort('zmiana',true)"  ></i>
                     </div>
 
                     <div >
-                      <i class="arrow fa fa-arrow-down" aria-hidden="true"></i>
+                      <i [class.chosen]="isArrowChosen('zmiana',false)" class="arrow fa fa-arrow-down" 
+                      aria-hidden="true" (click)="sort('zmiana',false)" ></i>
                     </div>
 
                     <div style="display: inline-block;"></div>
@@ -87,11 +93,13 @@
                   <div class="arrows">
                  
                     <div>
-                      <i class="arrow fa fa-arrow-up" aria-hidden="true" ></i>
+                      <i  [class.chosen]="isArrowChosen('zmianaProc',true)" class="arrow fa fa-arrow-up" 
+                      aria-hidden="true" (click)="sort('zmianaProc',true)" ></i>
                     </div>
 
                     <div >
-                      <i class="arrow fa fa-arrow-down" aria-hidden="true"></i>
+                      <i [class.chosen]="isArrowChosen('zmianaProc',false)" (click)="sort('zmianaProc',false)"
+                      class="arrow fa fa-arrow-down" aria-hidden="true" ></i>
                     </div>
 
                     <div style="display: inline-block;"></div>
@@ -103,12 +111,14 @@
             </thead>
             <tbody >
               <tr *ngFor="let material of materials" class="material" (click)="selectMaterial(material)"   >
+               <td class="materialTxt">
                 <img class="icon" [src]="'assets/surowce-min/'+material.id +'.png'">
-                <td class="materialTxt" >{{material.name}}</td>
+               </td> 
+                <td id="materialName" class="" >{{material.name}}</td>
                 <td class="materialTxt" >{{material.unit}}</td>
 
                 <td class="materialTxt" >{{material.price}}</td>
-                <td class="materialTxt" >{{material.data}}</td>
+                <td class="materialTxt" >{{material.data | date: 'yyyy-MM-dd'}}</td>
         
 
                 <td class="materialTxt" >

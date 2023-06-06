@@ -83,9 +83,6 @@ sortWaluta(page:string) {
     this.cryptoService.getCryptosPageAlphabeticallyReversed("PLN",page).subscribe( response=>{
       this.cryptos = response;
     })
-
-  } else {
-
   }
 
 }
@@ -103,9 +100,7 @@ sortKurs(page:string) {
       this.cryptos = response;
     })
 
-  } else {
-
-  }
+  } 
 
 }
 
@@ -121,9 +116,7 @@ sortZmianaProc(page:string) {
       this.cryptos = response;
     })
 
-  } else {
-
-  }
+  } 
 } 
 
 

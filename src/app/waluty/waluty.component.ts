@@ -62,10 +62,90 @@ export class WalutyComponent implements OnInit {
   }
 
 
-  getCurrenciesByPage(page:string) {
-    this.currencyService.getCurrenciesByPage(page).subscribe(response=>{
+
+  sortWaluta(page:string) {
+  
+    if ( this.chosenArrow == "waluta" && this.isArrowUp == true) {
+  
+      this.currencyService.getCurrenciesPageAlphabetically(page).subscribe( response=>{
+        this.currencies = response;
+      })
+    } else if (this.chosenArrow == "waluta" && this.isArrowUp == false) {
+
+      this.currencyService.getCurrenciesPageAlphabeticallyReversed(page).subscribe( response=>{
+        this.currencies = response;
+      })
+    }
+    
+  }
+
+
+  
+sortKurs(page:string) {
+
+  if ( this.chosenArrow == "kurs" && this.isArrowUp == true) {
+
+    this.currencyService.getCurrenciesPageByPriceFall(page).subscribe( response=>{
       this.currencies = response;
     })
+  } else if (this.chosenArrow == "kurs" && this.isArrowUp == false){
+
+    this.currencyService.getCurrenciesPageByPriceGrow(page).subscribe( response=>{
+      this.currencies = response;
+    })
+  } 
+}
+
+sortZmianaProc(page:string) {
+
+  if ( this.chosenArrow == "zmianaProc" && this.isArrowUp == true) {
+
+    this.currencyService.getCurrenciesPageByPercentFall(page).subscribe( response=>{
+      this.currencies = response;
+    })
+  } else if (this.chosenArrow == "zmianaProc" && this.isArrowUp == false){
+    this.currencyService.getCurrenciesPageByPercentGrow(page).subscribe( response=>{
+      this.currencies = response;
+    })
+
+  } 
+  
+} 
+
+
+sortZmiana( page:string ) {
+
+  if ( this.chosenArrow == "zmiana" && this.isArrowUp == true) {
+
+    this.currencyService.getCurrenciesPageByChangeFall(page).subscribe( response=>{
+      this.currencies = response;
+    })
+  } else if (this.chosenArrow == "zmiana" && this.isArrowUp == false){
+    this.currencyService.getCurrenciesPageByChangeGrow(page).subscribe( response=>{
+      this.currencies = response;
+    })
+
+  } 
+
+}
+
+  
+
+
+  getCurrenciesByPage(page:string) {
+
+    if ( this.chosenArrow == "") {
+
+      this.currencyService.getCurrenciesByPage(page).subscribe(response=>{
+        this.currencies = response;
+      })
+    }
+
+    this.sortKurs(page);
+    this.sortWaluta(page);
+    this.sortZmiana(page);
+    this.sortZmianaProc(page);
+  
 
   }
 

@@ -1,4 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+th:hover {
+cursor: default;
+}
+
+table {
+    min-width: 60rem;
+    border-spacing: 0 0.2rem;
+}
+
 .arrows{
     margin-top: 0.4rem;
     float: right;

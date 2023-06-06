@@ -52,3 +52,7 @@
     padding: 0.7rem;
     max-width: 80px;
 }
+
+#materialName {
+  font-weight: 800;
+}

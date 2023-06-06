@@ -18,6 +18,7 @@ export class CurrencyHttpService {
 
   getAllCurrencies():Observable<Currency[]> {
 
+  
     return this.httpClient.get<Currency[]>(this.url).pipe( retry(5));
 
   }
@@ -65,6 +66,45 @@ export class CurrencyHttpService {
       return this.httpClient.get<Currency[]>(this.url + "/percent/grow"+ "?page="+page+"&size="+size).pipe(retry(5));
     }
     return this.httpClient.get<Currency[]>(this.url + "/percent/grow" + "?page="+page).pipe(retry(5));
+  }
+
+
+   
+  getCurrenciesPageByPriceGrow(page:string, size?:string ):Observable<Currency[]> {
+    
+    if ( size != undefined) {
+      return this.httpClient.get<Currency[]>(this.url + "/price/grow"+ "?page="+page+"&size="+size).pipe(retry(5));
+    }
+    return this.httpClient.get<Currency[]>(this.url + "/price/grow" + "?page="+page).pipe(retry(5));
+  }
+
+
+    
+  getCurrenciesPageByPriceFall(page:string, size?:string ):Observable<Currency[]> {
+    
+    if ( size != undefined) {
+      return this.httpClient.get<Currency[]>(this.url + "/price/fall"+ "?page="+page+"&size="+size).pipe(retry(5));
+    }
+    return this.httpClient.get<Currency[]>(this.url + "/price/fall" + "?page="+page).pipe(retry(5));
+  }
+
+
+     
+  getCurrenciesPageAlphabetically(page:string, size?:string ):Observable<Currency[]> {
+    
+    if ( size != undefined) {
+      return this.httpClient.get<Currency[]>(this.url + "/a"+ "?page="+page+"&size="+size).pipe(retry(5));
+    }
+    return this.httpClient.get<Currency[]>(this.url + "/a" + "?page="+page).pipe(retry(5));
+  }
+
+
+  getCurrenciesPageAlphabeticallyReversed(page:string, size?:string ):Observable<Currency[]> {
+    
+    if ( size != undefined) {
+      return this.httpClient.get<Currency[]>(this.url + "/z"+ "?page="+page+"&size="+size).pipe(retry(5));
+    }
+    return this.httpClient.get<Currency[]>(this.url + "/z" + "?page="+page).pipe(retry(5));
   }
 
 
