@@ -1,7 +1,9 @@
 # CurrencyAng
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
-To run this project you need to run my authentication server first - keycloak server
+
+
+## To run this project you need to run my authentication server first - keycloak server
 
 ## Development server
 
