@@ -108,7 +108,7 @@ timeOptions:TimeOption[] = [];
       data: {
         labels: this.labels,
         datasets: [{
-          label: '# of Votes',
+          label: 'PLN',
           data: this.data,
          
           borderWidth: 1

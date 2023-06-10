@@ -15,6 +15,8 @@ import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { CryptoComponent } from './crypto/crypto.component';
 import { KryptowalutyComponent } from './kryptowaluty/kryptowaluty.component';
 import { StronyComponent } from './strony/strony.component';
+import { HighchartComponent } from './highchart/highchart.component';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 
 @NgModule({
@@ -28,13 +30,15 @@ import { StronyComponent } from './strony/strony.component';
     MaterialComponent,
     CryptoComponent,
     KryptowalutyComponent,
-    StronyComponent
+    StronyComponent,
+    HighchartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+    HighchartsChartModule 
   ],
   providers: [
     {
