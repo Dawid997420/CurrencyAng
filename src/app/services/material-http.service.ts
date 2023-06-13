@@ -9,7 +9,7 @@ import { Material } from '../model/material';
 export class MaterialHttpService {
 
 
-  url:string =  "http://localhost:7777/material"
+  url:string =  "http://localhost:7777/materials"
 
 
   constructor(private httpClient:HttpClient) { }
@@ -23,35 +23,35 @@ export class MaterialHttpService {
 
 
   getAllMaterialsAlphabetically():Observable<Material[]> {
-    return this.httpClient.get<Material[]>(this.url + "/a").pipe(retry(5));
+    return this.httpClient.get<Material[]>(this.url + "/abc/ASC").pipe(retry(5));
   }
 
   getAllMaterialsAlphabeticallyReversed():Observable<Material[]> {
-    return this.httpClient.get<Material[]>(this.url + "/z").pipe(retry(5));
+    return this.httpClient.get<Material[]>(this.url + "/abc/DESC").pipe(retry(5));
   }
 
   getAllMaterialsByPriceFall():Observable<Material[]> {
-    return this.httpClient.get<Material[]>(this.url + "/price/fall").pipe(retry(5));
+    return this.httpClient.get<Material[]>(this.url + "/price/DESC").pipe(retry(5));
   }
 
   getAllMaterialsByPriceGrow():Observable<Material[]> {
-    return this.httpClient.get<Material[]>(this.url + "/price/grow").pipe(retry(5));
+    return this.httpClient.get<Material[]>(this.url + "/price/ASC").pipe(retry(5));
   }
 
   getAllMaterialsByChangeFall():Observable<Material[]> {
-    return this.httpClient.get<Material[]>(this.url + "/change/fall").pipe(retry(5));
+    return this.httpClient.get<Material[]>(this.url + "/change/DESC").pipe(retry(5));
   }
 
   getAllMaterialsByChangeGrow():Observable<Material[]> {
-    return this.httpClient.get<Material[]>(this.url + "/change/grow").pipe(retry(5));
+    return this.httpClient.get<Material[]>(this.url + "/change/ASC").pipe(retry(5));
   }
   
   getAllMaterialsByPercentFall():Observable<Material[]> {
-    return this.httpClient.get<Material[]>(this.url + "/percent/fall").pipe(retry(5));
+    return this.httpClient.get<Material[]>(this.url + "/percentChange/DESC").pipe(retry(5));
   }
 
   getAllMaterialsByPercentGrow():Observable<Material[]> {
-    return this.httpClient.get<Material[]>(this.url + "/percent/grow").pipe(retry(5));
+    return this.httpClient.get<Material[]>(this.url + "/percentChange/ASC").pipe(retry(5));
   }
 
 

@@ -9,7 +9,7 @@ import { retry } from 'rxjs';
 })
 export class CryptoService {
 
-  url:string =  "http://localhost:7777/crypto"
+  url:string =  "http://localhost:7777/cryptos"
 
   constructor(private httpClient:HttpClient) {}
 
@@ -26,20 +26,20 @@ export class CryptoService {
   getCryptosPageByPriceGrow( currencyCode:string,page:string,size?:number ):Observable<Crypto[]> {
     
     if ( size!= undefined) {
-      return this.httpClient.get<Crypto[]>(this.url + "/price/grow" + "/" + currencyCode + "?page=" 
+      return this.httpClient.get<Crypto[]>(this.url + "/price/ASC" + "/" + currencyCode + "?page=" 
       + page + "&size="+size).pipe(retry(5));
     }
-    return this.httpClient.get<Crypto[]>(this.url  + "/price/grow" + "/" + currencyCode + "?page=" + page)
+    return this.httpClient.get<Crypto[]>(this.url  + "/price/ASC" + "/" + currencyCode + "?page=" + page)
     .pipe(retry(5));
   }
 
   getCryptosPageByPriceFall( currencyCode:string,page:string,size?:number ):Observable<Crypto[]> {
     
     if ( size!= undefined) {
-      return this.httpClient.get<Crypto[]>(this.url + "/price/fall" + "/" + currencyCode + "?page=" 
+      return this.httpClient.get<Crypto[]>(this.url + "/price/DESC" + "/" + currencyCode + "?page=" 
       + page + "&size="+size).pipe(retry(5));
     }
-    return this.httpClient.get<Crypto[]>(this.url  + "/price/fall" + "/" + currencyCode + "?page=" + page)
+    return this.httpClient.get<Crypto[]>(this.url  + "/price/DESC" + "/" + currencyCode + "?page=" + page)
     .pipe(retry(5));
   }
 
@@ -47,20 +47,20 @@ export class CryptoService {
   getCryptosPageByPercentGrow( currencyCode:string,page:string,size?:number ):Observable<Crypto[]> {
     
     if ( size!= undefined) {
-      return this.httpClient.get<Crypto[]>(this.url + "/percent/grow" + "/" + currencyCode + "?page=" 
+      return this.httpClient.get<Crypto[]>(this.url + "/percentChange/ASC" + "/" + currencyCode + "?page=" 
       + page + "&size="+size).pipe(retry(5));
     }
-    return this.httpClient.get<Crypto[]>(this.url  + "/percent/grow" + "/" + currencyCode + "?page=" + page)
+    return this.httpClient.get<Crypto[]>(this.url  + "/percentChange/ASC" + "/" + currencyCode + "?page=" + page)
     .pipe(retry(5));
   }
 
   getCryptosPageByPercentFall( currencyCode:string,page:string,size?:number ):Observable<Crypto[]> {
     
     if ( size!= undefined) {
-      return this.httpClient.get<Crypto[]>(this.url + "/percent/fall" + "/" + currencyCode + "?page=" 
+      return this.httpClient.get<Crypto[]>(this.url + "/percentChange/DESC" + "/" + currencyCode + "?page=" 
       + page + "&size="+size).pipe(retry(5));
     }
-    return this.httpClient.get<Crypto[]>(this.url  + "/percent/fall" + "/" + currencyCode + "?page=" + page)
+    return this.httpClient.get<Crypto[]>(this.url  + "/percentChange/DESC" + "/" + currencyCode + "?page=" + page)
     .pipe(retry(5));
   }
 
@@ -68,20 +68,20 @@ export class CryptoService {
   getCryptosPageByMarketCapFall( currencyCode:string,page:string,size?:number ):Observable<Crypto[]> {
     
     if ( size!= undefined) {
-      return this.httpClient.get<Crypto[]>(this.url + "/marketCap/fall" + "/" + currencyCode + "?page=" 
+      return this.httpClient.get<Crypto[]>(this.url + "/marketCap/DESC" + "/" + currencyCode + "?page=" 
       + page + "&size="+size).pipe(retry(5));
     }
-    return this.httpClient.get<Crypto[]>(this.url  + "/marketCap/fall" + "/" + currencyCode + "?page=" + page)
+    return this.httpClient.get<Crypto[]>(this.url  + "/marketCap/DESC" + "/" + currencyCode + "?page=" + page)
     .pipe(retry(5));
   }
 
   getCryptosPageByMarketCapGrow( currencyCode:string,page:string,size?:number ):Observable<Crypto[]> {
     
     if ( size!= undefined) {
-      return this.httpClient.get<Crypto[]>(this.url + "/marketCap/grow" + "/" + currencyCode + "?page=" 
+      return this.httpClient.get<Crypto[]>(this.url + "/marketCap/ASC" + "/" + currencyCode + "?page=" 
       + page + "&size="+size).pipe(retry(5));
     }
-    return this.httpClient.get<Crypto[]>(this.url  + "/marketCap/grow" + "/" + currencyCode + "?page=" + page)
+    return this.httpClient.get<Crypto[]>(this.url  + "/marketCap/ASC" + "/" + currencyCode + "?page=" + page)
     .pipe(retry(5));
   }
 
@@ -89,10 +89,10 @@ export class CryptoService {
   getCryptosPageAlphabetically( currencyCode:string,page:string,size?:number ):Observable<Crypto[]> {
     
     if ( size!= undefined) {
-      return this.httpClient.get<Crypto[]>(this.url + "/a" + "/" + currencyCode + "?page=" 
+      return this.httpClient.get<Crypto[]>(this.url + "/abc" + "/ASC" + currencyCode + "?page=" 
       + page + "&size="+size).pipe(retry(5));
     }
-    return this.httpClient.get<Crypto[]>(this.url  + "/a" + "/" + currencyCode + "?page=" + page)
+    return this.httpClient.get<Crypto[]>(this.url  + "/abc" + "/ASC" + currencyCode + "?page=" + page)
     .pipe(retry(5));
   }
 
@@ -101,10 +101,10 @@ export class CryptoService {
   getCryptosPageAlphabeticallyReversed( currencyCode:string,page:string,size?:number ):Observable<Crypto[]> {
     
     if ( size!= undefined) {
-      return this.httpClient.get<Crypto[]>(this.url + "/z" + "/" + currencyCode + "?page=" 
+      return this.httpClient.get<Crypto[]>(this.url + "/abc" + "/DESC" + currencyCode + "?page=" 
       + page + "&size="+size).pipe(retry(5));
     }
-    return this.httpClient.get<Crypto[]>(this.url  + "/z" + "/" + currencyCode + "?page=" + page)
+    return this.httpClient.get<Crypto[]>(this.url  + "/abc" + "/DESC" + currencyCode + "?page=" + page)
     .pipe(retry(5));
   }
 
@@ -118,7 +118,7 @@ export class CryptoService {
 
   getCryptoForDays(cryptoName:string,days:string):Observable<Crypto[]> {
     
-    return this.httpClient.get<Crypto[]>(this.url + "/" + cryptoName + "/pln" + "/" +days).pipe(retry(5)
+    return this.httpClient.get<Crypto[]>(this.url + "/days/" + cryptoName + "/" +days).pipe(retry(5)
     );  }
 
 
