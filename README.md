@@ -4,6 +4,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
+# How this look likes
+
+## Home
+![Image](https://github.com/Dawid997420/CurrencyAng/blob/master/src/assets/git/index.png)
+
+## Detail Info
+![Image](https://github.com/Dawid997420/CurrencyAng/blob/master/src/assets/git/wykres.png)
+
+
 
 ## Development server
 
